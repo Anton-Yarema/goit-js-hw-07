@@ -10,6 +10,11 @@ galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 galleryContainer.insertAdjacentHTML("beforeend", cardsMurkup);
 
+ var lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
+  });
+
 function createGalleryItemsMarkup(galleryItems) {
   return galleryItems
     .map(({ description, original, preview }) => {
@@ -32,10 +37,7 @@ function onGalleryContainerClick(e) {
   // if (e.target.nodeName !== 'IMG') {
   //   return;
   // }
- var lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
+
 }
 
 galleryContainer.addEventListener("keydown", (e) => { 
